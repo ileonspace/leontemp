@@ -1,0 +1,75 @@
+html直接跳转网址代码 自动跳转到其他网站代码
+
+1、HTML网页跳转代码（可隐藏跳转后网址）
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IT备忘录</title>
+<frameset framespacing="0" border="0" rows="0" frameborder="0">
+<frame name="main" src="https://www.itmemo.cn/" scrolling="auto" noresize></frameset>
+</head>
+<body></body>
+</html>
+
+2、HTML网页直接跳转代码
+
+<meta http-equiv="refresh" content="0; url=https://www.itmemo.cn">
+
+3、PHP网页跳转代码
+
+<?php
+header("HTTP/1.1 301 Moved Permanently");
+header("Location: https://www.itmemo.cn");
+exit();
+?>
+
+4、JavaScript网页跳转代码
+
+<script language="javascript">
+top.location='https://www.itmemo.cn';
+</script>
+
+5、Apache(301)跳转代码
+
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule (.*) https://www.itmemo.cn$1 [R=301,L]
+
+6、ASP网页跳转代码
+
+<%
+Response.Status="301 Moved Permanently"
+Response.AddHeader "Location","https://www.itmemo.cn"
+Response.End
+%>
+
+7、ASP.NET(301)跳转代码
+
+<%@ Page Language="C#" %>
+<script runat="server">
+protected void Page_Load(object sender, EventArgs e)
+{
+HttpContext.Current.Response.StatusCode = 301;
+HttpContext.Current.Response.Status = "301 Moved Permanently";
+HttpContext.Current.Response.AddHeader("Location", https://www.itmemo.cn);
+}
+
+8、Perl跳转代码
+
+$q = new CGI;
+print $q->redirect("https://www.itmemo.cn");
+
+9、Pyton跳转代码
+
+from django import http
+def view(request):
+return http.HttpResponseRedirect('https://www.itmemo.cn')
+
+10、Nginx 301网页跳转代码
+
+if ($host ~ '^itmemo.cn'){
+    return 301 https://www.itmemo.cn$request_uri;
+}
+
+以上网页跳转代码，大家根据自己的情况复制粘贴，修改跳转网址即可。
