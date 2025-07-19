@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>LeonSpace</title>
+    <script>
+        // 使用 JavaScript 修改地址栏，显示原始页面地址
+        window.onload = function() {
+            history.replaceState(null, null, window.location.pathname);
+        };
+    </script>
+    <style>
+        /* 确保 iframe 占满整个页面，无边框 */
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://film.qzz.io/" title="LeonSpace"></iframe>
+</body>
+</html>
