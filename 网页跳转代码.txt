@@ -1,48 +1,113 @@
 html直接跳转网址代码 自动跳转到其他网站代码
 
-1、HTML网页跳转代码（可隐藏跳转后网址）
+Grok：把下面代码1给Grok，并且：网页跳转代码，隐藏跳转后的地址，需要跳转后网页自动适配移动端、桌面端.
+
+
+得出的推荐代码👍👍：👇👇
+
+‼️发现Grok的代码，跳转后，页面链接无法正常打开。（Grok代码，可以用于正常的网站隐藏跳转，此处不适合）
+     
+所以，直接采用下面代码2（非常简洁），无任何问题！
+
+
+//////////////////////////👇👇Grok Ai，依据下面代码1，适配跳转后移动端代码////////////////////
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeonSpace</title>
+    <script>
+        // 隐藏目标 URL，保持地址栏显示原始地址
+        window.onload = function() {
+            history.replaceState(null, null, window.location.pathname);
+        };
+    </script>
+    <style>
+        /* 确保 iframe 占满页面并适配设备 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+        }
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+            display: block;
+        }
+        /* 响应式设计：针对移动端优化 */
+        @media (max-width: 768px) {
+            iframe {
+                /* 移动端可能需要调整缩放或样式 */
+                transform: scale(1);
+                transform-origin: top left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://link3.cc/ileon/" title="LeonSpace" allowfullscreen></iframe>
+</body>
+</html>
+
+//////////////////////////👆👆Grok Ai，依据下面代码1，适配跳转后移动端代码////////////////////
+
+
+
+
+
+1、HTML网页跳转代码（可隐藏跳转后网址-但没有适配跳转后移动端适配，上面Grok代码可以👆👆）
 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>IT备忘录</title>
+<title>LeonSpace</title>
 <frameset framespacing="0" border="0" rows="0" frameborder="0">
-<frame name="main" src="https://www.itmemo.cn/" scrolling="auto" noresize></frameset>
+<frame name="main" src="https://link3.cc/ileon/“ scrolling="auto" noresize></frameset>
 </head>
 <body></body>
 </html>
 
+
 2、HTML网页直接跳转代码
 
-<meta http-equiv="refresh" content="0; url=https://www.itmemo.cn">
+<meta http-equiv="refresh" content="0; url=https://link3.cc/ileon">
+
 
 3、PHP网页跳转代码
 
 <?php
 header("HTTP/1.1 301 Moved Permanently");
-header("Location: https://www.itmemo.cn");
+header("Location: https://link3.cc/ileon");
 exit();
 ?>
+
 
 4、JavaScript网页跳转代码
 
 <script language="javascript">
-top.location='https://www.itmemo.cn';
+top.location='https://link3.cc/ileon';
 </script>
+
 
 5、Apache(301)跳转代码
 
 Options +FollowSymLinks
 RewriteEngine on
-RewriteRule (.*) https://www.itmemo.cn$1 [R=301,L]
+RewriteRule (.*) https://link3.cc/ileon$1 [R=301,L]
+
 
 6、ASP网页跳转代码
 
 <%
 Response.Status="301 Moved Permanently"
-Response.AddHeader "Location","https://www.itmemo.cn"
+Response.AddHeader "Location","https://link3.cc/ileon"
 Response.End
 %>
+
 
 7、ASP.NET(301)跳转代码
 
@@ -52,24 +117,28 @@ protected void Page_Load(object sender, EventArgs e)
 {
 HttpContext.Current.Response.StatusCode = 301;
 HttpContext.Current.Response.Status = "301 Moved Permanently";
-HttpContext.Current.Response.AddHeader("Location", https://www.itmemo.cn);
+HttpContext.Current.Response.AddHeader("Location", https://link3.cc/ileon);
 }
+
 
 8、Perl跳转代码
 
 $q = new CGI;
-print $q->redirect("https://www.itmemo.cn");
+print $q->redirect("https://link3.cc/ileon");
+
 
 9、Pyton跳转代码
 
 from django import http
 def view(request):
-return http.HttpResponseRedirect('https://www.itmemo.cn')
+return http.HttpResponseRedirect('https://link3.cc/ileon')
 
 10、Nginx 301网页跳转代码
 
 if ($host ~ '^itmemo.cn'){
-    return 301 https://www.itmemo.cn$request_uri;
+    return 301 https://link3.cc/ileon$request_uri;
 }
+
+
 
 以上网页跳转代码，大家根据自己的情况复制粘贴，修改跳转网址即可。
